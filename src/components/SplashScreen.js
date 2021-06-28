@@ -24,11 +24,7 @@ const Title = styled.h1`
     transition: all .5s ease;
 `;
 
-const TagLine = styled.span`
-    color: ${props => props.theme.tagLineColor};
-    font-size: 18px;
-    transition: all .5s ease;
-`;
+
 
 const Toggle = styled.button`
     cursor: pointer;
@@ -61,8 +57,8 @@ function Splash(props) {
                 <Toggle onClick={changeTheme}>
                     {icon}
                 </Toggle>
-                <Title>Coding With Chaim</Title>
-                <TagLine>Level up your web development skills!</TagLine>
+                <Title>Click and change Theme</Title>
+                
             </Container>
         </Page>
     );
