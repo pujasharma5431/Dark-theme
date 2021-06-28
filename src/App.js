@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
 
+import { Paper } from '@material-ui/core';
+import './App.css';
+import { useState } from 'react';
+import ButtonAppBar from './components/AppBar';
+import SimpleCard from './components/Card';
+import {createMuiTheme,ThemeProvider} from '@material-ui/core/styles' 
 function App() {
+  const[darkMode,setDarkMode]=useState(false)
+
+  const theme =createMuiTheme({
+    palette:{
+      type:darkMode?"dark":"light"
+    }
+  })
   return (
+    <ThemeProvider theme={theme}>
+      <Paper style={{
+        height:"150vh"
+      }}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+<ButtonAppBar checked={darkMode} change={()=>setDarkMode(!darkMode)}/>
+<SimpleCard/>
     </div>
+    </Paper>
+    </ThemeProvider>
   );
 }
 
