@@ -4,7 +4,7 @@ import Splash from "./components/SplashScreen";
 import { ThemeProvider } from "styled-components";
 
 const LightTheme = {
-  pageBackground: "white",
+  pageBackground: "green",
   titleColor: "#dc658b",
   tagLineColor: "black"
 };
